@@ -1,0 +1,51 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace FirstApp
+{
+    internal class Program
+    {
+        void Que1()
+        {
+            Console.WriteLine("Hello Sir...");
+            Console.Write("Welcome...");
+            Console.WriteLine("Hello Miss...");
+            Console.WriteLine("Welcome...");
+        }
+
+        (String, int, string, string) Que2()
+        {
+            Console.WriteLine("Enter Name : ");
+            String name = Console.ReadLine();
+
+            Console.WriteLine("Enter The Age : ");
+            int age = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Enter Color ");
+            String color = Console.ReadLine();
+
+            Console.WriteLine("Enter Profession");
+            String prof = Console.ReadLine();
+
+            return (name, age, color, prof);
+        }
+
+        /// Main Method In C#
+        static void Main(string[] args)
+        {
+            Program p=new Program();    
+            p.Que1();
+            var result =p.Que2();
+            String name = result.Item1;
+            int age = result.Item2;
+            String color = result.Item3;
+            String prof = result.Item4;
+
+            Console.WriteLine($"Name :{name} and Age : {age}");
+            Console.WriteLine($"Color :{age} and Profession : {prof}");
+        }
+    }
+}
